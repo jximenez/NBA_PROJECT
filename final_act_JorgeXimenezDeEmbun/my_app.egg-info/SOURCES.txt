@@ -1,4 +1,3 @@
-pyproject.toml
 setup.py
 my_app/__init__.py
 my_app/__main__.py
