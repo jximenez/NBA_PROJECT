@@ -1,0 +1,14 @@
+pyproject.toml
+setup.py
+my_app/__init__.py
+my_app/__main__.py
+my_app/controller.py
+my_app/db_controller.py
+my_app/plotting_averages.py
+my_app/requests.py
+my_app.egg-info/PKG-INFO
+my_app.egg-info/SOURCES.txt
+my_app.egg-info/dependency_links.txt
+my_app.egg-info/entry_points.txt
+my_app.egg-info/requires.txt
+my_app.egg-info/top_level.txt
