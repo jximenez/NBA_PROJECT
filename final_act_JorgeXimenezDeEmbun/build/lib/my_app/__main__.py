@@ -1,7 +1,7 @@
-from my_app.db_controller import Dbcontroller
+from my_app.controller import Controller
 
 def main():
     
-    db_controller = Dbcontroller()
-    db_controller.launch_db_controller()
+    controller = Controller()
+    controller.launch_controller()
 
