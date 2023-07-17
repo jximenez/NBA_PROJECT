@@ -47,10 +47,21 @@ class Controller:
             elif option == '3':
                 players = ml_controller.show_players_in_database()
                 print(players)
-                model = ml_controller.trainning_model()
-                player_stats = []
-                prediction = ml_controller.prediction(model, player_stats)
-                print(f'{prediction}')
+                class_model, reg_model = ml_controller.trainning_model()
+                player_stats = [
+                                float(input('Minutos jugados: ')),
+                                int(input('Puntos: ')),
+                                int(input('Asistencias: ')),
+                                int(input('Robos: ')),
+                                int(input('Perdidas: ')),
+                                int(input('Tapones: ')),
+                                int(input('Faltas: ')),
+                                int(input('Rebotes: '))
+                                ]
+                
+                result_prediction, points_prediction = ml_controller.prediction(class_model, reg_model, player_stats)
+                print(f'El jugador gana(0) o pierde(1) el partido: {result_prediction}')
+                print(f'El equipo del jugador gana o pierde por: {int(points_prediction)} puntos')
 
             elif option=='4':
                 self.__connection.close()

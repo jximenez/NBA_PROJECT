@@ -54,7 +54,7 @@ class Dbcontroller:
             player_position = player_info['position']
             player_height = player_info['height_feet']
             player_weight = player_info['weight_pounds']
-            qry_insert_player = f"""INSERT INTO JUGADORES (IDJugador, Nombre, Posicion,Altura,Peso) SELECT '{player_id}' , '{player_name}' , '{player_position}' , '{player_height}' , '{player_weight}' WHERE NOT EXISTS (SELECT 1 FROM JUGADORES WHERE IDJugador= '{player_id}')"""
+            qry_insert_player = f"""INSERT INTO JUGADORES (IDJugador, Nombre, Posicion, Altura_feet, Peso_pounds) SELECT '{player_id}' , '{player_name}' , '{player_position}' , '{player_height}' , '{player_weight}' WHERE NOT EXISTS (SELECT 1 FROM JUGADORES WHERE IDJugador= '{player_id}')"""
             execute_query(self.__connection, qry_insert_player, True)  
 
             with open(f'my_app/my_app_saved_files/stats_players_requested/{player_name_2}_{season_played_2}.json', 'r') as stats_player_file:
